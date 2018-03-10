@@ -1,0 +1,6 @@
+*.pyc
+*.png
+*.swp
+api.txt
+bots.txt
+venv/*
